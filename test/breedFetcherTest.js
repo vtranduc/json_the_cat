@@ -17,4 +17,16 @@ describe('fetchBreedDescription', () => {
       done();
     });
   });
+
+  it('Should return null because cat type is invalid', (done) => {
+
+    fetchBreedDescription('appleOrangeGrape', (err, desc) => {
+      //console.log(err)
+      //console.log('00000000000000000000000000000000000000000')
+      assert.isNotNull(err);
+      done();
+    });
+
+  });
+  
 });

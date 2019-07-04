@@ -32,7 +32,7 @@ const fetchBreedDescription = function(breedName, callback) {
     // console.log(typeof body);
 
     if (error) {
-      return console.log('Failed to request details: ', error);
+      console.log('Failed to request details: ', error);
     }
     const breed = JSON.parse(body)[0];
 
@@ -43,7 +43,13 @@ const fetchBreedDescription = function(breedName, callback) {
     //   error = true;
     // }
 
-    callback(error, breed.description);
+    //console.log(error, '555555555555555')
+    //console.log(error, 666666666)
+
+
+    callback(breed ? null: 'Breed not found', breed ? breed.description : null);
+
+    
   
     // if (error) {
     //   return console.log('Failed to request details: ', error);
